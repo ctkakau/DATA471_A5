@@ -1,0 +1,40 @@
+---
+title: "DATA471 Assignment 5"
+author: "kakauchad_300212228"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+library(ggplot2)
+library(ggfortify)
+library(dplyr)
+```
+# Assignment info
+
+  1. Read in data  
+  2. Initial Data Analysis  
+  3. Preprocess data  
+  4. carry out tasks  
+  5. Answer the questions  
+  
+## Read in the data  
+The data comprises 11 csv files providing weather and climate information for three locations in the Hong Kong region:  Wong Chuk Hang (HKS), Tseung Kwan O (JKB), King's Park (KP).  Each location has a file for each of: 'Rainfall (mm)' (RF), 'Wind Speed (km/h/)' (WSPD), 'Maximum Temperature (degrees Celsius)' (CLMMAXT), 'Minimum Temperature (degrees Celsius)' (CLMMINT), 'Mean Temperature (degrees Celsius)' (CLMTEMP).
+
+
+```{r readInData}
+# read in weather data from three regions in HK
+# collect names of data files
+csv_files <- list.files("./DATA471_A5_datasets")
+path <- './DATA471_A5_datasets'
+hks_max <- read.csv(paste(path,'CLMMAXT_HKS.csv', sep = '/'), skip = 2, header = T, )
+hks_col  <- read.csv(paste(path,'CLMMAXT_HKS.csv', sep = '/'), skip = 2, header = F, nrows = 1 )
+hks_col <- iconv(hks_col, "latin1", "ASCII", sub = "")
+
+
+for (i in 1:2) {
+  
+}
+```
+
